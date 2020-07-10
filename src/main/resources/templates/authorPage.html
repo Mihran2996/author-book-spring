@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Author</title>
+</head>
+<body>
+Welcome Author page!
+<br>
+<a th:href="@{/}">homepage</a>
+<br>
+<table th:value="${users}" border="1px solid black">
+    <caption>All Authors</caption>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>Gender</td>
+        <td>Email</td>
+        <td>Bio</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.gender}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.bio}"></td>
+        <td><a th:href="@{/updateA(id=${user.id})}" >update</a></td>
+        <td><a th:href="@{/deleteAuthor(id=${user.id})}">delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
