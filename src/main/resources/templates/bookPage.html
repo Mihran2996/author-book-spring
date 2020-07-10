@@ -7,7 +7,7 @@
 <body>
 Welcome Book page!
 <br>
-<a th:href="@{/}">homepage</a>
+<a th:href="@{/}">Home page</a>
 <br>
 <table th:value="${books}" border="1px solid black">
     <caption>All Authors</caption>
@@ -26,7 +26,7 @@ Welcome Book page!
         <td th:text="${book.description}"></td>
         <td th:text="${book.price}"></td>
         <td th:text="${book.authorId}"></td>
-        <td><a th:href="@{/updateB(id=${book.id})}">update</a></td>
+        <td><a th:href="@{/updateBookData(id=${book.id})}">update</a></td>
         <td><a th:href="@{/deleteBook(id=${book.id})}">delete</a></td>
     </tr>
 </table>

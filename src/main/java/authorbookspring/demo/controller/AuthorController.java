@@ -37,7 +37,7 @@ public class AuthorController {
         authorRepository.deleteById(id);
         return "redirect:/author";
     }
-    @GetMapping("/updateA")
+    @GetMapping("/updateAutherData")
     public String updateAuthorPage(@RequestParam("id") int id) {
         userId = id;
         return "updateAuthorPage";

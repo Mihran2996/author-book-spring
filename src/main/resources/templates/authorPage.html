@@ -8,7 +8,7 @@
 <body>
 Welcome Author page!
 <br>
-<a th:href="@{/}">homepage</a>
+<a th:href="@{/}">Home page</a>
 <br>
 <table th:value="${users}" border="1px solid black">
     <caption>All Authors</caption>
@@ -29,7 +29,7 @@ Welcome Author page!
         <td th:text="${user.gender}"></td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.bio}"></td>
-        <td><a th:href="@{/updateA(id=${user.id})}" >update</a></td>
+        <td><a th:href="@{/updateAutherData(id=${user.id})}" >update</a></td>
         <td><a th:href="@{/deleteAuthor(id=${user.id})}">delete</a></td>
     </tr>
 </table>

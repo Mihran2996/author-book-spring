@@ -41,20 +41,22 @@ public class BookController {
         return "redirect:/book";
     }
 
-    @GetMapping("/updateB")
-    public String updateAuthorPage(@RequestParam("id") int id,ModelMap modelMap) {
+    @GetMapping("/updateBookData")
+    public String updateAuthorPage(@RequestParam("id") int id, ModelMap modelMap) {
         List<Author> all = authorRepository.findAll();
-        modelMap.addAttribute("users",all);
+        modelMap.addAttribute("users", all);
         bookId = id;
         return "updateBookPage";
     }
-@PostMapping("/updateBook")
-public String findByIdAndUpdate(@ModelAttribute Book book) {
+
+    @PostMapping("/updateBook")
+    public String findByIdAndUpdate(@ModelAttribute Book book) {
         Book one = bookRepository.getOne(bookId);
-        if(one!=null){
+        if (one != null) {
             bookRepository.deleteById(bookId);
             bookRepository.save(book);
         }
-    return "redirect:/book";
-}
+        return "redirect:/book";
+    }
+
 }
